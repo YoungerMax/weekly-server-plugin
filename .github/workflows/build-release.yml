@@ -1,0 +1,23 @@
+name: Build and Release
+on: release
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Set up Java
+      uses: actions/setup-java@v3
+      with:
+        distribution: temurin
+        java-version: 11
+
+    - name: Build
+      run: ./gradlew build
+
+    - name: Add to release
+      uses: actions/upload-artifact@v3
+      with:
+        name: survival-server-plugin
+        path: build/libs/*.jar
