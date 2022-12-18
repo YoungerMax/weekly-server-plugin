@@ -1,0 +1,6 @@
+name: SurvivalServer
+version: '${version}'
+main: me.youngermax.survivalserver.SurvivalServer
+api-version: 1.19
+authors: [ YoungerMax ]
+description: The plugin that runs this server
